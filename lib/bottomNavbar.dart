@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:internship_project_itemstorage/core/constants/colors/mainColors.dart';
 import 'package:internship_project_itemstorage/presentation/pages/add.dart';
 import 'package:internship_project_itemstorage/presentation/pages/home.dart';
 
@@ -15,12 +16,13 @@ class _NavBarState extends State<NavBar> {
     int pageIndex = 0;
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.indigo,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add'),
         ],
         currentIndex: pageIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: subColor,
         onTap: (index) {
           setState(() {
             pageIndex = index;

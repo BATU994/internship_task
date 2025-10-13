@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:internship_project_itemstorage/core/constants/colors/mainColors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,7 +13,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home Page'), centerTitle: true),
+      appBar: AppBar(
+        title: const Text('Home Page'),
+        centerTitle: true,
+        backgroundColor: primaryColor,
+        foregroundColor: subColor,
+      ),
       body: SingleChildScrollView(child: Column(children: [Text('ewf')])),
     );
   }

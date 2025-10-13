@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internship_project_itemstorage/bottomNavbar.dart';
+import 'package:internship_project_itemstorage/core/constants/colors/mainColors.dart';
 import 'package:internship_project_itemstorage/core/getIt/injenction_container.dart';
 import 'package:internship_project_itemstorage/presentation/blocs/productBloc/product_bloc.dart';
 import 'package:internship_project_itemstorage/presentation/blocs/storageBloc/stock_bloc.dart';
@@ -27,7 +28,7 @@ class MainApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           fontFamily: 'Inter',
-          scaffoldBackgroundColor: const Color.fromARGB(255, 36, 36, 36),
+          scaffoldBackgroundColor: backgroundColor,
         ),
         home: const NavBar(),
       ),

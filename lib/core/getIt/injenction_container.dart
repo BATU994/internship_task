@@ -19,26 +19,20 @@ import 'package:internship_project_itemstorage/presentation/blocs/storageBloc/st
 final sl = GetIt.instance;
 
 Future<void> init() async {
-  // Initialize Hive once
   await Hive.initFlutter();
 
-  // Register adapters
   Hive.registerAdapter(ProductModelAdapter());
   Hive.registerAdapter(StockModelAdapter());
 
-  // ✅ Open all boxes here once
   final productBox = await Hive.openBox<ProductModel>('productsBox');
   final stockBox = await Hive.openBox<StockModel>('stockBox');
 
-  // ✅ Create repository implementations with already opened boxes
   final productRep = ProductRepositoryImpl(productBox);
   final stockRep = StockRepositoryImpl(stockBox);
 
-  // Register repositories
   sl.registerLazySingleton<ProductRepository>(() => productRep);
   sl.registerLazySingleton<StockRepository>(() => stockRep);
 
-  // Register usecases
   sl.registerLazySingleton(() => GetProductsUseCase(sl()));
   sl.registerLazySingleton(() => AddProductUseCase(sl()));
   sl.registerLazySingleton(() => UpdateProductUseCase(sl()));
@@ -47,7 +41,6 @@ Future<void> init() async {
   sl.registerLazySingleton(() => AddAmountUseCase(sl()));
   sl.registerLazySingleton(() => AddStockUseCase(repository: sl()));
 
-  // Register blocs
   sl.registerFactory(
     () => ProductBloc(
       sl<AddProductUseCase>(),
