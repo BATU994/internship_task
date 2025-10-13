@@ -19,11 +19,18 @@ class ProductModel extends HiveObject {
   @HiveField(4)
   DateTime createdAt;
 
+  @HiveField(5)
+  DateTime? updatedAt;
+
+  @HiveField(6)
+  String? imagePath;
   ProductModel({
     required this.name,
     required this.gtin,
     required this.price,
     this.isDeleted = false,
     required this.createdAt,
+    required this.updatedAt,
+    this.imagePath,
   });
 }

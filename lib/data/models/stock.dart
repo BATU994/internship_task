@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
 
-part 'storage.g.dart';
+part 'stock.g.dart';
 
 @HiveType(typeId: 1)
 class StockModel extends HiveObject {

@@ -22,6 +22,8 @@ class ProductModelAdapter extends TypeAdapter<ProductModel> {
       price: fields[2] as double,
       isDeleted: fields[3] as bool,
       createdAt: fields[4] as DateTime,
+      updatedAt: fields[5] as DateTime?,
+      imagePath: fields[6] as String?,
     );
   }
 
@@ -38,7 +40,11 @@ class ProductModelAdapter extends TypeAdapter<ProductModel> {
       ..writeByte(3)
       ..write(obj.isDeleted)
       ..writeByte(4)
-      ..write(obj.createdAt);
+      ..write(obj.createdAt)
+      ..writeByte(5)
+      ..write(obj.updatedAt)
+      ..writeByte(6)
+      ..write(obj.imagePath);
   }
 
   @override

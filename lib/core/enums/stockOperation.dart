@@ -1,0 +1,1 @@
+enum StockOperation { add, remove }
