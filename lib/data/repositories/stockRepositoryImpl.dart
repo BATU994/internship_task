@@ -7,13 +7,7 @@ import 'package:internship_project_itemstorage/domain/repositories/stockReposito
 class StockRepositoryImpl implements StockRepository {
   late Box<StockModel> _stockBox;
 
-  Future<void> init() async {
-    if (!Hive.isBoxOpen('productsBox')) {
-      _stockBox = await Hive.openBox<StockModel>('productsBox');
-    } else {
-      _stockBox = Hive.box<StockModel>('productsBox');
-    }
-  }
+  StockRepositoryImpl(this._stockBox);
 
   Future<Either<Exception, List<StockModel>>> getStock() async {
     try {

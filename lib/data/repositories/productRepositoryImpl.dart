@@ -6,13 +6,7 @@ import 'package:internship_project_itemstorage/domain/repositories/productReposi
 class ProductRepositoryImpl implements ProductRepository {
   late Box<ProductModel> _productBox;
 
-  Future<void> init() async {
-    if (!Hive.isBoxOpen('productsBox')) {
-      _productBox = await Hive.openBox<ProductModel>('productsBox');
-    } else {
-      _productBox = Hive.box<ProductModel>('productsBox');
-    }
-  }
+  ProductRepositoryImpl(this._productBox);
 
   Future<Either<Exception, Unit>> addProduct(ProductModel product) async {
     try {

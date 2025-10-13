@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:internship_project_itemstorage/presentation/blocs/productBloc/product_bloc.dart';
-import 'package:internship_project_itemstorage/presentation/blocs/storageBloc/stock_bloc.dart';
 import 'package:internship_project_itemstorage/presentation/pages/add.dart';
 import 'package:internship_project_itemstorage/presentation/pages/home.dart';
 
