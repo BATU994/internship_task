@@ -30,7 +30,7 @@ class ProductModel extends HiveObject {
     required this.price,
     this.isDeleted = false,
     required this.createdAt,
-    required this.updatedAt,
+    this.updatedAt,
     this.imagePath,
   });
 }

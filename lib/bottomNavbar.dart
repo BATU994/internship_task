@@ -11,25 +11,29 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
+  int pageIndex = 0;
+
+  final List<Widget> pages = const [HomePage(), AddModels()];
+
   @override
   Widget build(BuildContext context) {
-    int pageIndex = 0;
     return Scaffold(
+      body: pages[pageIndex],
       bottomNavigationBar: BottomNavigationBar(
-        fixedColor: Colors.indigo,
-        items: const <BottomNavigationBarItem>[
+        backgroundColor: primaryColor,
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add'),
         ],
         currentIndex: pageIndex,
         selectedItemColor: subColor,
+        unselectedItemColor: textColor,
         onTap: (index) {
           setState(() {
             pageIndex = index;
           });
         },
       ),
-      body: [HomePage(), AddModels()][pageIndex],
     );
   }
 }
