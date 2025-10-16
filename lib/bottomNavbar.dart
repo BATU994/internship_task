@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:internship_project_itemstorage/core/constants/colors/mainColors.dart';
-import 'package:internship_project_itemstorage/presentation/pages/add.dart';
-import 'package:internship_project_itemstorage/presentation/pages/home.dart';
+import 'package:internship_project_itemstorage/src/core/constants/colors/mainColors.dart';
+import 'package:internship_project_itemstorage/src/presentation/pages/add.dart';
+import 'package:internship_project_itemstorage/src/presentation/pages/home.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});

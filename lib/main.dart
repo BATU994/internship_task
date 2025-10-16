@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internship_project_itemstorage/bottomNavbar.dart';
-import 'package:internship_project_itemstorage/core/constants/colors/mainColors.dart';
-import 'package:internship_project_itemstorage/core/getIt/injenction_container.dart';
-import 'package:internship_project_itemstorage/presentation/blocs/productBloc/product_bloc.dart';
-import 'package:internship_project_itemstorage/presentation/blocs/storageBloc/stock_bloc.dart';
+import 'package:internship_project_itemstorage/src/core/constants/colors/mainColors.dart';
+import 'package:internship_project_itemstorage/src/core/getIt/injenction_container.dart';
+import 'package:internship_project_itemstorage/src/presentation/blocs/productBloc/product_bloc.dart';
+import 'package:internship_project_itemstorage/src/presentation/blocs/storageBloc/stock_bloc.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,10 +19,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => sl<ProductBloc>()..add(LoadProducts()),
-        ),
-        BlocProvider(create: (context) => sl<StockBloc>()..add(LoadStocks())),
+        BlocProvider(create: (_) => sl<ProductBloc>()..add(LoadProducts())),
+        BlocProvider(create: (_) => sl<StockBloc>()..add(LoadStocks())),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
